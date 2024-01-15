@@ -13,6 +13,7 @@ const Stack = createNativeStackNavigator();
 import PageHome from './Page/Home';
 import PageGamesList from './Page/GamesList';
 import PageGameLevels from './Page/GameLevels';
+import PageGamePlayground from './Page/GamePlayground';
 
 export default function App() {
 
@@ -37,8 +38,11 @@ export default function App() {
         }}
       >
         <Stack.Screen name = "home" component = {PageHome} />
-        <Stack.Screen name = "games-list" component = {PageGamesList} />
-        <Stack.Screen name = "game-levels" component = {PageGameLevels} />
+        <Stack.Screen name = "games-list" component = {PageGamesList} options = {{ headerShown: true, title: 'Select Game'}} />
+        <Stack.Screen name = "game-levels" component = {PageGameLevels} options = {{ headerShown: true, title: 'Select Level'}} />
+        <Stack.Screen name = "game-playground">
+          { props => <PageGamePlayground sound = {sound} {...props} /> }
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
 );

@@ -12,17 +12,16 @@ export default function PageGameLevels({ route, navigation }) {
 
   return(
     <SafeAreaView style = {styles.screen}>
-      <StatusBar />
       <Text style = {styles.text} >What challenge ?</Text>
       <FlatList
-        data = {game.config.levels}
+        data = {game.levels}
         renderItem={({item}) => <GameLevel level = {item} onPress = {onSelectGameLevel} />}
       />
     </SafeAreaView>
   );
 
   function onSelectGameLevel(level) {
-    console.log(level)
+    navigation.navigate('game-playground', { game, level });
   }
 
 }

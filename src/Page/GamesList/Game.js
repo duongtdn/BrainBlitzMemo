@@ -11,14 +11,14 @@ export default function GameLevel({ game, onPress }) {
   return(
     <View style = {styles.container}>
       <Button
-        background = {Colors[game.config.btnBackground]}
-        color = {Colors[game.config.txtColor]}
+        background = {Colors[game.btnBackground]}
+        color = {Colors[game.txtColor]}
         width = {240}
         fontSize = {20}
         fontFamily = 'Mali-Bold'
         onPress = {e => onPress(game)}
       >
-        {game.config.title}
+        {game.title}
       </Button>
     </View>
   );

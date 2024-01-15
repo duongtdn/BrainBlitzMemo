@@ -12,10 +12,9 @@ export default function PageGamesList({ navigation }) {
 
   return(
     <SafeAreaView style = {styles.screen}>
-      <StatusBar />
       <Text style = {styles.text}>What game you wanna play?</Text>
       <FlatList
-        data = {games}
+        data = {games.list}
         renderItem={({item}) => <Game game = {item} onPress = {onSelectGame} />}
       />
     </SafeAreaView>
