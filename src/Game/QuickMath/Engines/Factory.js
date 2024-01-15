@@ -26,7 +26,12 @@ class Factory {
     this.__config = config;
   }
 
-  check(quiz, answer) {
+  static isLikelyTheAnswer(quiz, answer) {
+    const correct = parseInt(eval(quiz));
+    return correct.toString().length === answer.toString().length;
+  }
+
+  static check(quiz, answer) {
     return parseInt(eval(quiz)) === parseInt(answer);
   }
 
@@ -146,7 +151,7 @@ class Factory {
   }
 
   /*
-    G9: a - b, aa is from 41 to 99, b is from 11 to a-2
+    G9: a - b, a is from 41 to 99, b is from 11 to a-2
   */
   G9() {
     const a = this.__rand(41, 100);

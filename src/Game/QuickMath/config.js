@@ -1,5 +1,6 @@
 "use strict"
 
+const name = 'QuickMath';
 const title = 'Quick Math';
 const btnBackground = 'Blue';
 const txtColor = 'White';
@@ -9,7 +10,7 @@ const levels = [
     id: 'l1',
     title: 'Level 1: Not such a challenge',
     info: '40 simple math expressions, only addition and multiplication are used',
-    screen: 'quickmath-a',
+    engine: 'SimpleMath',
     background: 'LightBlue',
     color: 'Black',
     unlockNext: {
@@ -30,7 +31,7 @@ const levels = [
     id: 'l2',
     title: 'Level 2: A bit harder, but still easy',
     info: '40 math expressions with addition, multiplication, subtraction and division',
-    screen: 'quickmath-a',
+    engine: 'SimpleMath',
     background: 'LightGreen',
     color: 'Black',
     rule: {
@@ -48,4 +49,4 @@ const levels = [
   },
 ];
 
-export default { title, levels, btnBackground, txtColor };
+export default { name, title, levels, btnBackground, txtColor };
