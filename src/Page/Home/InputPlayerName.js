@@ -3,6 +3,7 @@
 import React from 'react';
 
 import { StyleSheet, View, TextInput } from 'react-native';
+import Colors from '../../Lib/colors';
 
 export default function InputPlayerName({ playerName, onChangePlayerName }) {
   return (
@@ -12,6 +13,8 @@ export default function InputPlayerName({ playerName, onChangePlayerName }) {
         onChangeText = {onChangeText}
         value = {playerName}
         placeholder = "Player's name"
+        placeholderTextColor = {Colors.Gray}
+        autoCapitalize = 'words'
         maxLength = {19}
       />
     </View>
@@ -38,8 +41,9 @@ const styles = StyleSheet.create({
     width: 280,
     height: 50,
     borderStyle: 'solid',
-    borderColor: '#919191',
+    borderColor: Colors.LightGray,
     borderWidth: 1,
     borderRadius: 8,
+    color: Colors.Sand,
   },
 });

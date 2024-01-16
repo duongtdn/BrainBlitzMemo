@@ -6,14 +6,9 @@ import { StyleSheet, View, Text} from 'react-native';
 import { formatTime } from '../../../../Lib/date';
 import Colors from '../../../../Lib/colors';
 
-export default function Header({ active, quizNumber, totalQuizNumbers, timer }) {
+export default function Header({ quizNumber, totalQuizNumbers, timer }) {
 
   const [elapsedTime, setElapsedTime] = useState(0);
-
-  // useEffect(() => {
-  //   const t = active? setInterval(() => setElapsedTime(elapsedTime => elapsedTime + 1), 1000) : null;
-  //   return () => active && t && clearInterval(t);
-  // }, [active]);
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -45,14 +40,14 @@ const styles = StyleSheet.create({
     paddingRight: 16,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: 'white',
+    backgroundColor: Colors.DarkBlue,
   },
   text: {
     fontFamily: 'Mali-Bold',
     fontSize: 16,
   },
   textNumber: {
-    color: Colors.Blue,
+    color: Colors.Sand,
   },
   textTimer: {
     color: Colors.Red,

@@ -3,6 +3,7 @@
 import React from "react";
 import { View } from "react-native";
 import { StyleSheet } from "react-native";
+import Colors from "../../Lib/colors";
 
 export default function TabBar({ state }) {
   return (
@@ -23,13 +24,13 @@ const styles = StyleSheet.create({
   tabBar: {
     flexDirection: 'row',
     justifyContent: 'center',
-    marginTop: 18,
+    paddingTop: 8,
+    backgroundColor: Colors.Background,
   },
   tabBarIndicator: {
     width: 8,
     height: 8,
     borderRadius: 5,
-    backgroundColor: '#d1d1d1',
     margin: 2,
   },
 });

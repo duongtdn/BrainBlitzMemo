@@ -45,6 +45,6 @@ export default function PageRecords() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Background,
   },
 });

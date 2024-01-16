@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 32,
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Background,
   },
   soundContainer: {
     flex: 1,
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   soundLabel: {
     fontFamily: 'Mali-Bold',
     fontSize: 12,
-    color: Colors.Blue,
+    color: Colors.LightBlue,
   },
   sliderContainer: {
     marginTop: 8,
@@ -90,6 +90,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Mali-Regular',
     fontSize: 22,
     marginRight: 8,
+    color: Colors.Amber,
   },
   sliderBar: {
     flex: 1,
@@ -100,6 +101,6 @@ const styles = StyleSheet.create({
   creditText: {
     fontFamily: 'Mali-Bold',
     fontSize: 12,
-    color: Colors.DarkGray,
+    color: Colors.Gray,
   }
 });

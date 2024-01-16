@@ -1,8 +1,9 @@
 "use strict"
 
 import React, { useMemo } from 'react'
-import { StyleSheet, SafeAreaView, Text } from 'react-native';
+import { StyleSheet, SafeAreaView } from 'react-native';
 
+import Colors from '../../Lib/colors.js';
 import StatusBar from '../../Component/StatusBar';
 
 import games from '../../Game';
@@ -37,6 +38,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: Colors.Background,
   },
 });

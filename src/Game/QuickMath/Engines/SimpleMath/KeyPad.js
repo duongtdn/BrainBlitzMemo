@@ -47,15 +47,15 @@ export default function KeyPad({ onChange, cmd }) {
           }
         </View>
         <View style = {styles.row}>
-          <View style={styles.padEnterBtnWrapper}>
-            <TouchableOpacity style={styles.padEnterBtn} onPress={backspace}>
-              <Text style={styles.padEnterBtnText}> &#8592;&#x2408; </Text>
+          <View style={styles.padSideKeyWrapper}>
+            <TouchableOpacity style={styles.padSideKey} onPress={backspace}>
+              <Text style={[styles.padSideKeyText, {color: Colors.DeepOrange}]}> &#8592;&#x2408; </Text>
             </TouchableOpacity>
           </View>
           <PadNum num={0} onPress={addDigitToAnswer} />
-          <View style={styles.padEnterBtnWrapper}>
-            <TouchableOpacity style={styles.padEnterBtn} onPress={clearAnswer}>
-              <Text style={[styles.padEnterBtnText, {color: Colors.DeepOrange}]}>&#9249;</Text>
+          <View style={styles.padSideKeyWrapper}>
+            <TouchableOpacity style={styles.padSideKey} onPress={clearAnswer}>
+              <Text style={[styles.padSideKeyText, {color: Colors.DeepOrange}]}>&#9249;</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -102,22 +102,20 @@ const styles = StyleSheet.create({
     fontFamily: 'Mali-Regular',
     fontSize: 36,
   },
-  pads: {
-
-  },
+  pads: {},
   row: {
     flexDirection: 'row',
     alignItems: 'center',
   },
-  padEnterBtnWrapper: {
+  padSideKeyWrapper: {
     flex: 1,
   },
-  padEnterBtn: {
+  padSideKey: {
     flex: 1,
     justifyContent: 'start',
     alignItems: 'center',
   },
-  padEnterBtnText: {
+  padSideKeyText: {
     fontFamily: 'Mali-Bold',
     fontSize: 52,
     color: '#000',

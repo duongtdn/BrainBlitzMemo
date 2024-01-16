@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
+import Colors from '../../../../Lib/colors';
 
 export default function Expression({ expr }) {
   if (!expr || expr.length === 0) { return null; }
@@ -21,5 +22,6 @@ const styles = StyleSheet.create({
   text: {
     fontFamily: 'Mali-SemiBold',
     fontSize: 48,
+    color: Colors.Amber
   }
 });

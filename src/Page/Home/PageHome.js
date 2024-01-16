@@ -10,6 +10,7 @@ import PlayButton from './PlayButton.js';
 import BottomPanel from './BottomPanel.js';
 
 import storage from '../../Lib/storage.js';
+import Colors from '../../Lib/colors.js';
 
 export default function PageHome({ navigation }) {
 
@@ -57,7 +58,7 @@ export default function PageHome({ navigation }) {
   }
 
   function openRecord() {
-    navigation.navigate('record');
+    navigation.navigate('records');
   }
 
 }
@@ -67,6 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: Colors.Background,
   },
 });

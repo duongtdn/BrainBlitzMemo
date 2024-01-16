@@ -15,7 +15,6 @@ export default function ({ gameLevel, onComplete, sound }) {
 
   const quizzes = useMemo(() => (new Factory(gameLevel.rule)).generate(), []);
 
-  const [active, setActive] = useState(false);
   const [quizIndex, setQuizIndex] = useState(0);
 
   const anim = useAnimation();
@@ -29,7 +28,6 @@ export default function ({ gameLevel, onComplete, sound }) {
       <Text style = {styles.text}>Quick Math</Text>
 
       <Header
-        // active = {active}
         quizNumber = {quizIndex + 1}
         totalQuizNumbers = {quizzes.length}
         timer = {timerRef}
@@ -79,7 +77,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: Colors.Sand,
+    backgroundColor: Colors.Background,
   },
   text: {
     fontSize: 16,

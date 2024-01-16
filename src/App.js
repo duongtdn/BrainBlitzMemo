@@ -16,6 +16,7 @@ import PageGameLevels from './Page/GameLevels';
 import PageGamePlayground from './Page/GamePlayground';
 import PageResult from './Page/Result';
 import PageSettings from './Page/Settings';
+import PageRecords from './Page/Records';
 
 export default function App() {
 
@@ -49,6 +50,7 @@ export default function App() {
         <Stack.Screen name="settings" options={{ headerShown: true, title: 'Settings'}}>
           {props => <PageSettings onSettingChange={onSettingChange} {...props} />}
         </Stack.Screen>
+        <Stack.Screen name = "records" component = {PageRecords} options = {{ headerShown: true, title: 'Best Records'}} />
       </Stack.Navigator>
     </NavigationContainer>
 );

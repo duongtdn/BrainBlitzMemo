@@ -37,5 +37,6 @@ const styles = StyleSheet.create({
     paddingLeft: 8,
     paddingRight: 8,
     fontFamily: 'Mali-Italic',
+    color: Colors.Sand,
   }
 });

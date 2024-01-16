@@ -3,7 +3,7 @@
 import React from 'react'
 import { StyleSheet, SafeAreaView, Text, FlatList } from 'react-native';
 
-import StatusBar from '../../Component/StatusBar';
+import Colors from '../../Lib/colors.js';
 import GameLevel from './GameLevel';
 
 export default function PageGameLevels({ route, navigation }) {
@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: Colors.Background,
   },
   text: {
     fontSize: 16,
     fontFamily: 'Mali-Bold',
     marginTop: 32,
+    color: Colors.LightGray
   }
 });

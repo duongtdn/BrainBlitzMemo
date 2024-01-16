@@ -7,13 +7,13 @@ import { formatDate, formatTime } from '../../Lib/date';
 import Colors from '../../Lib/colors';
 
 export default function GameRecordView({ game, record }) {
-console.log(record)
+
   return (
     <ScrollView style = {styles.container}>
 
       <View style = {styles.heading}>
         <Text style = {styles.gameTitle}>{game?.title}</Text>
-        <Text style = {[styles.p,s]}>Best Records</Text>
+        <Text style = {[styles.p,]}>Best Records</Text>
       </View>
       {
         game?.levels.map(level => (
@@ -38,26 +38,31 @@ console.log(record)
 }
 
 const styles = StyleSheet.create({
-  container: {},
+  container: {
+    backgroundColor: Colors.Background,
+  },
   heading: {
     alignItems: 'center',
   },
   title: {
-    backgroundColor: Colors.Orange,
+    backgroundColor: Colors.Yellow,
     paddingLeft: 16,
     paddingRight: 16,
   },
   p: {
     fontFamily: 'Mali-Regular',
     fontSize: 18,
+    color: Colors.Yellow,
   },
   italic: {
     fontFamily: 'Mali-Italic',
     fontSize: 18,
+    color: Colors.Sand,
   },
   gameTitle: {
     fontFamily: 'Mali-Bold',
     fontSize: 32,
+    color: Colors.Sand,
   },
   gameLevelBox: {
     fontFamily: 'Mali-Italic',
@@ -80,16 +85,16 @@ const styles = StyleSheet.create({
   date: {
     fontFamily: 'Mali-Regular',
     fontSize: 24,
-    color: '#919191',
+    color: Colors.LightGray,
   },
   bestRecord: {
     fontFamily: 'Mali-Bold',
     fontSize: 28,
-    color: 'tomato',
+    color: Colors.Red,
   },
   star: {
     fontSize: 32,
-    color: Colors.Orange,
+    color: Colors.Yellow,
   }
 });
 

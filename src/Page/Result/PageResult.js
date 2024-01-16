@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'flex-start',
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Background,
   },
   container: {
     alignItems: 'center',
@@ -163,11 +163,12 @@ const styles = StyleSheet.create({
   gameTitleText: {
     fontFamily: 'Mali-Bold',
     fontSize: 32,
-    color: Colors.BlueGray,
+    color: Colors.LightGray,
   },
   gameLevelText: {
     fontFamily: 'Mali-Regular',
     fontSize: 16,
+    color: Colors.Amber,
   },
   congratsBox: {
     marginTop: 28,
@@ -184,7 +185,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Mali-Bold',
     fontSize: 28,
     lineHeight: 28,
-    color: Colors.Black,
+    color: Colors.Khaki,
     marginBottom: 16,
   },
   resultBox: {
@@ -193,7 +194,7 @@ const styles = StyleSheet.create({
   message: {
     fontFamily: 'Mali-Regular',
     fontSize: 18,
-    color: Colors.DarkGray,
+    color: Colors.Gray,
     paddingLeft: 16,
     paddingRight: 16,
     textAlign: 'center',
@@ -213,7 +214,7 @@ const styles = StyleSheet.create({
   },
   shareableAea: {
     width: '100%',
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Background,
   },
   bestRecordBox: {
     flexDirection: 'row',

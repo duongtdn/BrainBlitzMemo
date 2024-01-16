@@ -3,13 +3,14 @@
 import React from 'react';
 
 import { StyleSheet, View, Text } from 'react-native';
+import Colors from '../../Lib/colors';
 
 export default function Header(props) {
   return (
     <View style={styles.header}>
       <View style={styles.logo}>
-        <Text style={[styles.logoText, styles.textBlue]}> Math Mad </Text>
-        <Text style={[styles.logoText, styles.textBlack]}> Quick </Text>
+        <Text style={[styles.logoText, styles.textLightBlue]}> Math Mad </Text>
+        <Text style={[styles.logoText, styles.textLightGray]}> Quick </Text>
       </View>
       <Text style={styles.slogan}> Simple Math &hearts; Strengthen Brains &hearts; Do it quick </Text>
     </View>
@@ -34,11 +35,12 @@ const styles = StyleSheet.create({
   slogan: {
     fontFamily: 'Mali-Regular',
     fontSize: 12,
+    color: Colors.Sand,
   },
-  textBlue: {
-    color: '#2196F3',
+  textLightBlue: {
+    color: Colors.LightBlue,
   },
-  textBlack: {
-    color: '#000',
+  textLightGray: {
+    color: Colors.LightGray,
   },
 });
