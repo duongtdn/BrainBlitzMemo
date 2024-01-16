@@ -14,6 +14,7 @@ import PageHome from './Page/Home';
 import PageGamesList from './Page/GamesList';
 import PageGameLevels from './Page/GameLevels';
 import PageGamePlayground from './Page/GamePlayground';
+import PageResult from './Page/Result';
 
 export default function App() {
 
@@ -43,6 +44,7 @@ export default function App() {
         <Stack.Screen name = "game-playground">
           { props => <PageGamePlayground sound = {sound} {...props} /> }
         </Stack.Screen>
+        <Stack.Screen name = "result" component = {PageResult} />
       </Stack.Navigator>
     </NavigationContainer>
 );

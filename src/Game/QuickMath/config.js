@@ -1,20 +1,22 @@
 "use strict"
 
-const name = 'QuickMath';
-const title = 'Quick Math';
-const btnBackground = 'Blue';
-const txtColor = 'White';
+const name = "QuickMath";
+const title = "Quick Math";
+const btnBackground = "Blue";
+const txtColor = "White";
 
 const levels = [
   {
-    id: 'l1',
-    title: 'Level 1: Not such a challenge',
-    info: '40 simple math expressions, only addition and multiplication are used',
-    engine: 'SimpleMath',
-    background: 'LightBlue',
-    color: 'Black',
+    id: "l1",
+    title: "Level 1: Not such a challenge",
+    info: "40 simple math expressions, only addition and multiplication are used",
+    engine: "SimpleMath",
+    background: "LightBlue",
+    color: "Black",
+    resultType: "time",
+    resultMessage: "You have made it in",
     unlockNext: {
-      id: 'l2',
+      id: "l2",
       condition: 120, // complete game in 120 seconds
     },
     rule: {
@@ -28,12 +30,14 @@ const levels = [
     }
   },
   {
-    id: 'l2',
-    title: 'Level 2: A bit harder, but still easy',
-    info: '40 math expressions with addition, multiplication, subtraction and division',
-    engine: 'SimpleMath',
-    background: 'LightGreen',
-    color: 'Black',
+    id: "l2",
+    title: "Level 2: A bit harder, but still easy",
+    info: "40 math expressions with addition, multiplication, subtraction and division",
+    engine: "SimpleMath",
+    background: "LightGreen",
+    color: "Black",
+    resultType: "time",
+    resultMessage: "You have made it in",
     rule: {
       G5: 1,    // a x b + c, all are less then 10
       G6: 2,   // a + b, both are greater then 10
