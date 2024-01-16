@@ -30,7 +30,31 @@ export default function PageResult({ route, navigation }) {
       return true;
     });
     return () => evt.remove();
-  }, [])
+  }, []);
+
+  const [isBestRecord, setIsBestRecord] = useState(false);
+  useEffect(() => {
+    (async() => {
+      const records = await storage.record.get();
+      const gameRecord = records[game.name] || {};
+      const levelRecord = gameRecord[level.id]
+      const isBestRecord = checkIfIsBestRecord(levelRecord?.best, result, level.resultType);
+      if (isBestRecord) {
+        gameRecord[level.id] = { best: parseInt(result), ts: (new Date()).getTime() };
+        records[game.name] = gameRecord;
+        await storage.record.put(records);
+      }
+      setIsBestRecord(isBestRecord);
+    })();
+  }, []);
+
+  function checkIfIsBestRecord(lastBest, result, resultType) {
+    if (lastBest) {
+      return resultType === 'time' ? parseInt(result) < parseInt(lastBest) : parseInt(result) > parseInt(lastBestt)
+    } else {
+      return true
+    }
+  }
 
   const __screenShotRef = useRef(null);
 
@@ -51,6 +75,14 @@ export default function PageResult({ route, navigation }) {
             <Text style = {styles.congratsText}>Weldone</Text>
             {
               playerName && playerName.length > 0 ? <Text style={styles.playerNameText}>{playerName}</Text> : null
+            }
+            {
+              isBestRecord ?
+                <View style = {styles.bestRecordBox}>
+                  <Text style = {styles.bestRecordStart}>&#x1F31F;</Text>
+                  <Text style={styles.bestRecordText}>New Best Result</Text>
+                </View>
+                : null
             }
           </View>
 
@@ -92,7 +124,6 @@ export default function PageResult({ route, navigation }) {
   );
 
   async function playAgain() {
-    // navigation.navigate('game-levels', { game });
     navigation.navigate('game-playground', { game, level });
   }
 
@@ -136,10 +167,10 @@ const styles = StyleSheet.create({
   },
   gameLevelText: {
     fontFamily: 'Mali-Regular',
-    fontSize: 18,
+    fontSize: 16,
   },
   congratsBox: {
-    marginTop: 32,
+    marginTop: 28,
     alignItems: 'center',
   },
   congratsText: {
@@ -183,5 +214,19 @@ const styles = StyleSheet.create({
   shareableAea: {
     width: '100%',
     backgroundColor: Colors.White,
+  },
+  bestRecordBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+  },
+  bestRecordStart: {
+    fontSize: 32,
+    color: Colors.Yellow,
+  },
+  bestRecordText: {
+    fontFamily: 'Mali-Bold',
+    fontSize: 24,
+    color: Colors.Orange,
   },
 });
