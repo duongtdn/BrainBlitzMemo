@@ -6,25 +6,29 @@ import { StyleSheet, SafeAreaView, Text } from 'react-native';
 import StatusBar from '../../Component/StatusBar';
 
 import games from '../../Game';
+import { useIsFocused } from '@react-navigation/native';
 
 export default function PageGamePlayground({ route, navigation, sound }) {
 
   const { game, level } = route.params;
 
+  const isFocused = useIsFocused();
+
   const engines = useMemo(() => games.engines[game.name], []);
 
-  const GameView = engines[level.engine]?.View
+  const GameView = useMemo(() => isFocused? engines[level.engine]?.View : null, [isFocused]);
 
   return(
     <SafeAreaView style = {styles.screen}>
       <StatusBar />
-      <GameView gameLevel = {level} sound = {sound} onComplete = {onComplete} />
+      {
+        GameView && <GameView gameLevel = {level} sound = {sound} onComplete = {onComplete} />
+      }
     </SafeAreaView>
   );
 
   function onComplete(result) {
-    console.log(result)
-    // navigation.navigate('result', { game, level, result });
+    navigation.navigate('result', { game, level, result });
   }
 
 }
