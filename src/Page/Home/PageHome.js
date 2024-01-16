@@ -53,7 +53,7 @@ export default function PageHome({ navigation }) {
   }
 
   function openSetting() {
-    navigation.navigate('setting');
+    navigation.navigate('settings');
   }
 
   function openRecord() {

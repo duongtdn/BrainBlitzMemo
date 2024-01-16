@@ -15,6 +15,7 @@ import PageGamesList from './Page/GamesList';
 import PageGameLevels from './Page/GameLevels';
 import PageGamePlayground from './Page/GamePlayground';
 import PageResult from './Page/Result';
+import PageSettings from './Page/Settings';
 
 export default function App() {
 
@@ -45,6 +46,9 @@ export default function App() {
           { props => <PageGamePlayground sound = {sound} {...props} /> }
         </Stack.Screen>
         <Stack.Screen name = "result" component = {PageResult} />
+        <Stack.Screen name="settings" options={{ headerShown: true, title: 'Settings'}}>
+          {props => <PageSettings onSettingChange={onSettingChange} {...props} />}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
 );
@@ -83,11 +87,31 @@ export default function App() {
     try {
       await sound.correct.loadAsync(require('../assets/Sound/correct.wav'), { volume: __setting.sound.effect });
       await sound.wrong.loadAsync(require('../assets/Sound/wrong.wav'), { volume: __setting.sound.effect });
-      await sound.music.loadAsync(require('../assets/Sound/schooldays.mp3'), { isLooping: true, shouldPlay: false, volume: __setting.sound.music });
+      await sound.music.loadAsync(require('../assets/Sound/schooldays.mp3'), { isLooping: true, shouldPlay: true, volume: __setting.sound.music });
     } catch (err) {
       console.log(err)
     }
     return sound;
+  }
+
+  function onSettingChange(setting) {
+    return function(obj) {
+      return async function(value) {
+        if (setting === 'sound') {
+          if (obj === 'music') {
+            await sound.music.setVolumeAsync(value);
+          } else {
+            await sound.correct.setVolumeAsync(value);
+            await sound.wrong.setVolumeAsync(value);
+          }
+          // save setting
+          const newSetting = await storage.setting.get();
+          newSetting.sound[obj] = value;
+          await storage.setting.put(newSetting);
+          return;
+        }
+      }
+    }
   }
 
 }
