@@ -19,7 +19,7 @@ const Colors = {
   Khaki: '#f0e68c',
   Amber: '#ffc107',
   Indigo: '#3f51b5',
-  Yellow: 'ffeb3b',
+  Yellow: '#ffeb3b',
 };
 
 export default Colors;
