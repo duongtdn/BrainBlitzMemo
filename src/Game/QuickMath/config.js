@@ -21,12 +21,12 @@ const levels = [
     },
     rule: {
       G1: 2,    // a + b, result is less then 10
-      G2: 2,   // a + b, a & b are less then 10, result is greater then 10
-      G3: 6,   // a x b, both less then 10
-      G4: 6,    // a + b, 5 < a < 10 then 10 < b < 100 and vice versa
-      G5: 6,   // a x b + c, all are less then 10
-      G6: 12,    // a + b, both are greater then 10
-      G7: 6,    // a x b + c, c greater then 10
+      // G2: 2,   // a + b, a & b are less then 10, result is greater then 10
+      // G3: 6,   // a x b, both less then 10
+      // G4: 6,    // a + b, 5 < a < 10 then 10 < b < 100 and vice versa
+      // G5: 6,   // a x b + c, all are less then 10
+      // G6: 12,    // a + b, both are greater then 10
+      // G7: 6,    // a x b + c, c greater then 10
     }
   },
   {
