@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    backgroundColor: Colors.White,
+    backgroundColor: Colors.Sand,
   },
   text: {
     fontSize: 16,

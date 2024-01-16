@@ -13,6 +13,10 @@ const Colors = {
   LightBlue: '#87ceeb',
   Orange: '#ff9800',
   DeepOrange: '#ff5722',
+  Sand: '#fdf5e6',
+  Khaki: '#f0e68c',
+  Amber: '#ffc107',
+  Indigo: '#3f51b5',
 };
 
 export default Colors;

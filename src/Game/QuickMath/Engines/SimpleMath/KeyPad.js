@@ -95,13 +95,7 @@ const styles = StyleSheet.create({
     marginLeft: 32,
     marginRight: 32,
     marginBottom: 16,
-    // height: 56,
-    // width: 240,
-    // marginTop: 2,
-    // paddingLeft: 8,
-    // paddingBottom: 8,
     backgroundColor: '#f2f2f2',
-    // flexDirection: 'row',
     alignItems: 'center',
   },
   answerText: {

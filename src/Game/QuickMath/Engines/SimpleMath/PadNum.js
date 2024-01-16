@@ -19,11 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingBottom: 8,
     alignItems: 'center',
-    // backgroundColor: '#8bc34a',
-    backgroundColor: '#e1e1e1',
-    // borderColor: '#9e9e9e',
-    // borderStyle: 'solid',
-    // borderWidth: 2,
+    backgroundColor: Colors.LightBlue,
     margin: 4,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowOffset: { width: 0, height: 1 },
@@ -35,6 +31,6 @@ const styles = StyleSheet.create({
   padNumText: {
     fontFamily: 'Mali-Bold',
     fontSize: 42,
-    color: '#607d8b',
+    color: Colors.Black,
   }
 });
