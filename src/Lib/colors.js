@@ -5,6 +5,8 @@ const Colors = {
   Black: '#000',
   Gray: '#9e9e9e',
   LightGray: '#f1f1f1',
+  BlueGray: '#607d8b',
+  DarkGray: '#616161',
   Red: '#f44336',
   PaleRed: '#ffdddd',
   Green: '#4caf50',
@@ -17,6 +19,7 @@ const Colors = {
   Khaki: '#f0e68c',
   Amber: '#ffc107',
   Indigo: '#3f51b5',
+  Yellow: 'ffeb3b',
 };
 
 export default Colors;
