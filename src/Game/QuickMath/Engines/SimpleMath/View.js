@@ -52,8 +52,8 @@ export default function ({ gameLevel, onComplete, sound }) {
   async function evaluate(answer) {
     if (answer === 0) { return }
     const quiz = quizzes[quizIndex]
-    if (Factory.isLikelyTheAnswer(quiz.quiz, answer)) {
-      if (Factory.check(quiz.quiz, answer)) {
+    if (Factory.isLikelyTheAnswer(quiz, answer)) {
+      if (Factory.check(quiz, answer)) {
         keyPadRef.current?.setColor('LightGreen');
         await sound?.correct?.replayAsync();
         if (quizIndex < quizzes.length - 1) {

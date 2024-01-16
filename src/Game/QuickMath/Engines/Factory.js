@@ -48,7 +48,7 @@ class Factory {
         while (arr.indexOf(e) !== -1) {
           e = this[g]();
         }
-        arr.push({ type: g, quiz: e });
+        arr.push(e);
       }
       expr.push(...arr);
     });

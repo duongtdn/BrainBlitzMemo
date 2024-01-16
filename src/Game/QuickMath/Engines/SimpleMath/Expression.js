@@ -7,7 +7,7 @@ export default function Expression({ expr }) {
   if (!expr || expr.length === 0) { return null; }
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>{expr.quiz.replace('*', 'x').replace('/','÷')}</Text>
+      <Text style={styles.text}>{expr.replace('*', 'x').replace('/','÷')}</Text>
     </View>
   )
 }
