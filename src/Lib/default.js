@@ -10,12 +10,7 @@ export default {
     playerName: '',
   },
   record: {
-    exprL1: {
-      best: 0,
-      logs: [],
-    }
   },
   unlock: {
-    exprL1: true,
   }
 };

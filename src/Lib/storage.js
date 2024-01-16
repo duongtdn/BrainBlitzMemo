@@ -29,6 +29,9 @@ const storage = {
       console.error(e);
     }
   },
+  async clear() {
+    await AsyncStorage.clear();
+  },
   setting: {
     async get() { return storage.get('setting'); },
     set(value) { return storage.set('setting', value); },
