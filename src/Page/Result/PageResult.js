@@ -1,7 +1,7 @@
 "use strict"
 
 import React, { useEffect, useState, useRef } from "react";
-import { BackHandler, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { BackHandler, Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
 
@@ -67,6 +67,15 @@ export default function PageResult({ route, navigation }) {
         <View style = {styles.shareableAea} ref={__screenShotRef} collapsable={false}>
 
           <View style = {styles.gameTitleBox}>
+            <Image
+              style = {styles.img}
+              source = {require('../../../assets/mmq.png')}
+            />
+            <View style={styles.logo}>
+              <Text style={[styles.logoText, styles.textLightBlue]}>Math </Text>
+              <Text style={[styles.logoText, styles.textPaleRed]}>Mad </Text>
+              <Text style={[styles.logoText, styles.textLightGray]}>Quick</Text>
+            </View>
             <Text style = {styles.gameTitleText}>{game.title}</Text>
             <Text style = {styles.gameLevelText}>{level.title}</Text>
           </View>
@@ -154,7 +163,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   gameTitleBox: {
-    marginTop: 32,
+    marginTop: 16,
     marginBottom: 16,
     borderRadius: 4,
     padding: 6,
@@ -162,8 +171,12 @@ const styles = StyleSheet.create({
   },
   gameTitleText: {
     fontFamily: 'Mali-Bold',
-    fontSize: 32,
+    fontSize: 24,
+    lineHeight: 32,
+    paddingLeft: 16,
+    paddingRight: 16,
     color: Colors.LightGray,
+    backgroundColor: Colors.DeepOrange,
   },
   gameLevelText: {
     fontFamily: 'Mali-Regular',
@@ -171,7 +184,6 @@ const styles = StyleSheet.create({
     color: Colors.Amber,
   },
   congratsBox: {
-    marginTop: 28,
     alignItems: 'center',
   },
   congratsText: {
@@ -202,7 +214,11 @@ const styles = StyleSheet.create({
   resultText: {
     fontFamily: 'Mali-Bold',
     fontSize: 32,
+    lineHeight: 40,
+    paddingLeft: 16,
+    paddingRight: 16,
     color: Colors.Red,
+    backgroundColor: Colors.PaleYellow,
   },
   actionBox: {
     alignItems: 'center',
@@ -215,6 +231,30 @@ const styles = StyleSheet.create({
   shareableAea: {
     width: '100%',
     backgroundColor: Colors.Background,
+  },
+  img: {
+    width: 120,
+    height: 120,
+  },
+  logo: {
+    marginBottom: 16,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoText: {
+    fontFamily: 'Mali-Bold',
+    fontSize: 32,
+    lineHeight: 56,
+  },
+  textLightBlue: {
+    color: Colors.LightBlue,
+  },
+  textPaleRed: {
+    color: Colors.PaleRed,
+  },
+  textLightGray: {
+    color: Colors.LightGray,
   },
   bestRecordBox: {
     flexDirection: 'row',

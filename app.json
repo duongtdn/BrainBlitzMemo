@@ -4,12 +4,12 @@
     "slug": "BrainBlitzMemo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/mmq-icon.png",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/mmq-splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#000"
+      "backgroundColor": "#001a31"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,14 +19,13 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/mmq-adaptive-icon.png",
+        "backgroundColor": "#001a31"
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "sourceExts": [ "js", "json", "ts", "tsx", "jsx", "vue"],
     "entryPoint": "./src/App.js"
   }
 }

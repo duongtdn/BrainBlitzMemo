@@ -76,8 +76,8 @@ const styles = StyleSheet.create({
   },
   soundLabel: {
     fontFamily: 'Mali-Bold',
-    fontSize: 12,
-    color: Colors.LightBlue,
+    fontSize: 16,
+    color: Colors.Sand,
   },
   sliderContainer: {
     marginTop: 8,

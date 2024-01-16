@@ -22,6 +22,7 @@ const Colors = {
   Amber: '#ffc107',
   Indigo: '#3f51b5',
   Yellow: '#ffeb3b',
+  PaleYellow: '#ffffcc',
 };
 
 Colors.Background = Colors.DarkBlue;

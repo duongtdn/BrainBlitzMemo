@@ -2,15 +2,20 @@
 
 import React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 import Colors from '../../Lib/colors';
 
 export default function Header(props) {
   return (
     <View style={styles.header}>
+      <Image
+        style = {styles.img}
+        source = {require('../../../assets/mmq.png')}
+      />
       <View style={styles.logo}>
-        <Text style={[styles.logoText, styles.textLightBlue]}> Math Mad </Text>
-        <Text style={[styles.logoText, styles.textLightGray]}> Quick </Text>
+        <Text style={[styles.logoText, styles.textLightBlue]}>Math </Text>
+        <Text style={[styles.logoText, styles.textPaleRed]}>Mad </Text>
+        <Text style={[styles.logoText, styles.textLightGray]}>Quick</Text>
       </View>
       <Text style={styles.slogan}> Simple Math &hearts; Strengthen Brains &hearts; Do it quick </Text>
     </View>
@@ -19,17 +24,24 @@ export default function Header(props) {
 
 const styles = StyleSheet.create({
   header: {
-    marginBottom: 48,
+    marginTop: 64,
+    marginBottom: 32,
     alignItems: 'center',
   },
-  logo: {
+  img: {
+    width: 180,
+    height: 180,
     marginBottom: 32,
+  },
+  logo: {
+    marginBottom: 16,
+    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
   },
   logoText: {
     fontFamily: 'Mali-Bold',
-    fontSize: 48,
+    fontSize: 40,
     lineHeight: 56,
   },
   slogan: {
@@ -39,6 +51,9 @@ const styles = StyleSheet.create({
   },
   textLightBlue: {
     color: Colors.LightBlue,
+  },
+  textPaleRed: {
+    color: Colors.PaleRed,
   },
   textLightGray: {
     color: Colors.LightGray,

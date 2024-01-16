@@ -32,7 +32,7 @@ export default function PageRecords() {
         games?.list?.map((game, index) => {
           return (
             <Tab.Screen name={`tab.${game?.name}`} key={game?.name}>
-              { props => <GameRecordView game = {game} record = {records[game?.name]} {...props} /> }
+              { props => <GameRecordView game = {game} record = {records[game?.name] || {}} {...props} /> }
             </Tab.Screen>
           );
         })
