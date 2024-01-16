@@ -102,7 +102,10 @@ const styles = StyleSheet.create({
     fontFamily: 'Mali-Regular',
     fontSize: 36,
   },
-  pads: {},
+  pads: {
+    paddingLeft: 32,
+    paddingRight: 32,
+  },
   row: {
     flexDirection: 'row',
     alignItems: 'center',

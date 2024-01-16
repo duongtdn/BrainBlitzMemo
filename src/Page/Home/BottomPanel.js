@@ -30,7 +30,7 @@ export default function BottomPanel({ openSetting, openRecord }) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 64,
+    marginTop: 48,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

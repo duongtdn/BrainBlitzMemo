@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   padNumText: {
     fontFamily: 'Mali-Bold',
-    fontSize: 42,
+    fontSize: 38,
     color: Colors.Black,
   }
 });

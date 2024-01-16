@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "BrainBlitzMemo",
-    "slug": "BrainBlitzMemo",
+    "name": "Math Mad Quick",
+    "slug": "MMQ",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/mmq-icon.png",
+    "icon": "./assets/mmq-1-icon.png",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/mmq-splash.png",
@@ -19,9 +19,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/mmq-adaptive-icon.png",
+        "foregroundImage": "./assets/mmq-adaptive-1-icon.png",
         "backgroundColor": "#001a31"
-      }
+      },
+      "package": "com.duongtdn.mathmadquick"
     },
     "web": {
       "favicon": "./assets/favicon.png"

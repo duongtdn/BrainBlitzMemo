@@ -1,15 +1,15 @@
 "use strict"
 
 import React, { useEffect, useState, useRef } from "react";
-import { BackHandler, Image, SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { BackHandler, Image, SafeAreaView, ScrollView, StyleSheet, Text, View } from "react-native";
 import { captureRef } from 'react-native-view-shot';
 import * as Sharing from 'expo-sharing';
 
-import StatusBar from '../../Component/StatusBar';
 import Colors from "../../Lib/colors";
 import storage from '../../Lib/storage.js';
 import { formatTime } from "../../Lib/date.js";
 import Button from "../../Component/Button";
+import StatusBar from "../../Component/StatusBar.js";
 
 export default function PageResult({ route, navigation }) {
 
@@ -50,7 +50,7 @@ export default function PageResult({ route, navigation }) {
 
   function checkIfIsBestRecord(lastBest, result, resultType) {
     if (lastBest) {
-      return resultType === 'time' ? parseInt(result) < parseInt(lastBest) : parseInt(result) > parseInt(lastBestt)
+      return resultType === 'time' ? parseInt(result) < parseInt(lastBest) : parseInt(result) > parseInt(lastBest)
     } else {
       return true
     }
@@ -61,74 +61,74 @@ export default function PageResult({ route, navigation }) {
   return (
     <SafeAreaView style = {styles.screen}>
       <StatusBar />
+      <ScrollView>
+        <View style = {styles.container}>
 
-      <View style = {styles.container}>
+          <View style = {styles.shareableAea} ref={__screenShotRef} collapsable={false}>
 
-        <View style = {styles.shareableAea} ref={__screenShotRef} collapsable={false}>
-
-          <View style = {styles.gameTitleBox}>
-            <Image
-              style = {styles.img}
-              source = {require('../../../assets/mmq.png')}
-            />
-            <View style={styles.logo}>
-              <Text style={[styles.logoText, styles.textLightBlue]}>Math </Text>
-              <Text style={[styles.logoText, styles.textPaleRed]}>Mad </Text>
-              <Text style={[styles.logoText, styles.textLightGray]}>Quick</Text>
+            <View style = {styles.gameTitleBox}>
+              <Image
+                style = {styles.img}
+                source = {require('../../../assets/mmq.png')}
+              />
+              <View style={styles.logo}>
+                <Text style={[styles.logoText, styles.textLightBlue]}>Math </Text>
+                <Text style={[styles.logoText, styles.textPaleRed]}>Mad </Text>
+                <Text style={[styles.logoText, styles.textLightGray]}>Quick</Text>
+              </View>
+              <Text style = {styles.gameTitleText}>{game.title}</Text>
+              <Text style = {styles.gameLevelText}>{level.title}</Text>
             </View>
-            <Text style = {styles.gameTitleText}>{game.title}</Text>
-            <Text style = {styles.gameLevelText}>{level.title}</Text>
+
+            <View style = {styles.congratsBox}>
+              <Text style = {styles.congratsText}>Weldone</Text>
+              {
+                playerName && playerName.length > 0 ? <Text style={styles.playerNameText}>{playerName}</Text> : null
+              }
+              {
+                isBestRecord ?
+                  <View style = {styles.bestRecordBox}>
+                    <Text style = {styles.bestRecordStart}>&#x1F31F;</Text>
+                    <Text style={styles.bestRecordText}>New Best Result</Text>
+                  </View>
+                  : null
+              }
+            </View>
+
+            <View style = {styles.resultBox}>
+              <Text style={styles.message}>{level.resultMessage}</Text>
+              {
+                level.resultType === 'time' ? <Text style={styles.resultText}>{formatTime(result, {long: true})}</Text> : null
+              }
+            </View>
+
+            <View style = {styles.encourageBox}>
+              <Text style={styles.message}>Play every day to strengthen your brain</Text>
+            </View>
+
           </View>
 
-          <View style = {styles.congratsBox}>
-            <Text style = {styles.congratsText}>Weldone</Text>
-            {
-              playerName && playerName.length > 0 ? <Text style={styles.playerNameText}>{playerName}</Text> : null
-            }
-            {
-              isBestRecord ?
-                <View style = {styles.bestRecordBox}>
-                  <Text style = {styles.bestRecordStart}>&#x1F31F;</Text>
-                  <Text style={styles.bestRecordText}>New Best Result</Text>
-                </View>
-                : null
-            }
-          </View>
-
-          <View style = {styles.resultBox}>
-            <Text style={styles.message}>{level.resultMessage}</Text>
-            {
-              level.resultType === 'time' ? <Text style={styles.resultText}>{formatTime(result, {long: true})}</Text> : null
-            }
-          </View>
-
-          <View style = {styles.encourageBox}>
-            <Text style={styles.message}>Play every day to strengthen your brain</Text>
+          <View style = {styles.actionBox}>
+            <Button
+              background = {Colors.Blue}
+              color = {Colors.White}
+              fontSize = {24}
+              onPress = {playAgain}
+            >
+              Play again
+            </Button>
+            <Button
+              background = {Colors.Sand}
+              color = {Colors.DeepOrange}
+              fontSize = {24}
+              onPress = {share}
+            >
+              Share your achievement
+            </Button>
           </View>
 
         </View>
-
-        <View style = {styles.actionBox}>
-          <Button
-            background = {Colors.Blue}
-            color = {Colors.White}
-            fontSize = {24}
-            onPress = {playAgain}
-          >
-            Play again
-          </Button>
-          <Button
-            background = {Colors.Sand}
-            color = {Colors.DeepOrange}
-            fontSize = {24}
-            onPress = {share}
-          >
-            Share your achievement
-          </Button>
-        </View>
-
-      </View>
-
+      </ScrollView>
     </SafeAreaView>
   );
 
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
   },
   encourageBox: {
     marginTop: 16,
-    marginBottom: 32,
+    marginBottom: 16,
   },
   shareableAea: {
     width: '100%',

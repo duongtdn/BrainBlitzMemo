@@ -1,7 +1,7 @@
 "use strict"
 
-import React, { useEffect, useMemo, useRef, useState } from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import React, { useMemo, useRef, useState } from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 
 import Colors from '../../../../Lib/colors';
 import Factory from '../Factory';
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: 'Mali-Bold',
     textAlign: 'center',
-    backgroundColor: Colors.Black,
     color: Colors.White,
   }
 });
