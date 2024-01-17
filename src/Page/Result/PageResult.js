@@ -188,16 +188,16 @@ const styles = StyleSheet.create({
   },
   congratsText: {
     fontFamily: 'Mali-Bold',
-    fontSize: 36,
+    fontSize: 28,
     lineHeight: 36,
-    color: Colors.Blue,
+    color: Colors.Sand,
     marginBottom: 16,
   },
   playerNameText: {
     fontFamily: 'Mali-Bold',
-    fontSize: 28,
-    lineHeight: 28,
-    color: Colors.Khaki,
+    fontSize: 32,
+    lineHeight: 38,
+    color: Colors.Yellow,
     marginBottom: 16,
   },
   resultBox: {
