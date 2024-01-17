@@ -15,16 +15,23 @@ const levels = [
     color: "Black",
     resultType: "time",
     resultMessage: "You have made it in",
+    achievements: [
+      [40, 'Crazy Genius'],
+      [120, 'Genius'],
+      [240, 'Outstanding'],
+      [360, 'Weldone'],
+      ['ELSE', 'You made it'],
+    ],
     unlockNext: {
       id: "l2",
       condition: 120, // complete game in 120 seconds
     },
     rule: {
-      G1: 2,    // a + b, result is less then 10
+      G1: 1,    // a + b, result is less then 10
       G2: 2,   // a + b, a & b are less then 10, result is greater then 10
       G3: 6,   // a x b, both less then 10
       G4: 6,    // a + b, 5 < a < 10 then 10 < b < 100 and vice versa
-      G5: 6,   // a x b + c, all are less then 10
+      G5: 7,   // a x b + c, all are less then 10
       G6: 12,    // a + b, both are greater then 10
       G7: 6,    // a x b + c, c greater then 10
     }
@@ -38,6 +45,13 @@ const levels = [
     color: "Black",
     resultType: "time",
     resultMessage: "You have made it in",
+    achievements: [
+      [60, 'Crazy Genius'],
+      [140, 'Genius'],
+      [280, 'Outstanding'],
+      [400, 'Weldone'],
+      [undefined, 'You made it'],
+    ],
     rule: {
       G5: 1,    // a x b + c, all are less then 10
       G6: 2,   // a + b, both are greater then 10

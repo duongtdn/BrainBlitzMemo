@@ -81,7 +81,7 @@ export default function PageResult({ route, navigation }) {
             </View>
 
             <View style = {styles.congratsBox}>
-              <Text style = {styles.congratsText}>Weldone</Text>
+              <Text style = {styles.congratsText}>{getAchievementMessage(result)}</Text>
               {
                 playerName && playerName.length > 0 ? <Text style={styles.playerNameText}>{playerName}</Text> : null
               }
@@ -149,6 +149,14 @@ export default function PageResult({ route, navigation }) {
       console.log(err)
     }
 
+  }
+
+  function getAchievementMessage(result) {
+    for (const [rank, achievement] of level.achievements) {
+      if (rank === 'ELSE' || parseInt(result) <= parseInt(rank)) {
+        return achievement;
+      }
+    }
   }
 
 }
