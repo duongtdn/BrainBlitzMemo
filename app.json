@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/mmq-adaptive-1-icon.png",
+        "foregroundImage": "./assets/mmq-adaptive-icon.png",
         "backgroundColor": "#001a31"
       },
       "package": "com.duongtdn.mathmadquick"
